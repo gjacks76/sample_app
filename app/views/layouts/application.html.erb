@@ -12,10 +12,10 @@
   <body>
 	<nav>
 	  <ul>
-	    <li><a>Home</a></li>
-	    <li><a>About</a></li>
-	    <li><a>Inventory</a></li>
-	    <li><a>Contact</a></li>
+	    <li><a><%= link_to "Home", static_pages_index_path %></a></li>
+	    <li><a><%= link_to "About", static_pages_about_path %></a></li>
+	    <li><a><%= link_to "Products", products_path %></a></li>
+	    <li><a><%= link_to "Contact Us", static_pages_contact_path %></a></li>
 	  </ul>
 	</nav>
     <%= yield %>
