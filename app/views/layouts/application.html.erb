@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-	<nav>
+  <p class="notice"><%= notice %></p>
+	<nav class="nav-collapse">
 	  <ul>
 	    <li><a><%= link_to "Home", static_pages_index_path %></a></li>
 	    <li><a><%= link_to "About", static_pages_about_path %></a></li>
@@ -26,6 +27,15 @@
         </div>
       </form>
 	   </ul>
+     <ul class="nav pull-right">
+      <li>
+        <% if user_signed_in? %>
+          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+        <% else %>
+          <%= link_to('Login', new_user_session_path) %>
+        <% end %>
+      </li>
+     </ul>
 	</nav>
   <%= yield %>
   <footer>
