@@ -16,12 +16,21 @@
 	    <li><a><%= link_to "About", static_pages_about_path %></a></li>
 	    <li><a><%= link_to "Products", products_path %></a></li>
 	    <li><a><%= link_to "Contact Us", static_pages_contact_path %></a></li>
-	  </ul>
+      <form class="navbar-form" role="search">
+        <div class="form-group">
+        <%= form_tag("/products", method: "get") do %>
+        <%= label_tag(:q, "Search for:") %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Search") %>
+        <% end %>
+        </div>
+      </form>
+	   </ul>
 	</nav>
-    <%= yield %>
-    <footer>
+  <%= yield %>
+  <footer>
     <div class="twitter">
-        <a href="https://twitter.com/summitwebdev" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @summitwebdev</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <a href="https://twitter.com/summitwebdev" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @summitwebdev</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div><!--end twitter-->
       <div class="fb-like" data-href="https://facebook.com/summit.webdev.1" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true">
       </div>
