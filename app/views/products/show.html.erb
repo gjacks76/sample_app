@@ -1,41 +1,44 @@
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <p id="notice"><%= notice %></p>
-<div class="container-fluid">
-  <div class="col-xs-6 col-md-4">
-    <p>
-      <strong>Name:</strong>
-      <%= @product.name %>
-    </p>
-
-    <p>
-      <strong>Description:</strong>
-      <%= @product.description %>
-    </p>
-
-    <p>
-      <strong>Product Image:</strong>
-      <%= image_tag(@product.image_url, class: "img-responsive") %>
-    </p>
-
-    <p>
-      <strong>Color:</strong>
-      <%= @product.colour %>
-    </p>
-
-    <p>
-      <strong>Price:</strong>
-      <%= @product.price %>
-    </p>
-
-    <p>
-      <strong>Reviews:</strong>
-      <%= @product.highest_rating_comment %>
-      <%= @product.lowest_rating_comment %>
-    </p>
-
-    <%= link_to 'Edit', edit_product_path(@product) %> |
-    <%= link_to 'Back', products_path %>
-  </div>
-</div>
+<h1><%= @product.name %>&nbspDetails</h1>
+<div class="container product">
+  <div class="row">
+    <div class="col-md-6 col-xs-12">
+      <%= image_tag(@product.image_url, class: "img-responsive") %><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+    </div>
+    <div class="grid-description-detail">
+      <div class="description-detail">
+          <p>
+            <strong>Name:</strong>
+            <%= @product.name %>
+          </p>
+          <p>
+            <strong>Description:</strong>
+            <%= @product.description %>
+          </p>
+          <p>
+            <strong>Product Image:</strong>
+          </p>
+          <p>
+            <strong>Color:</strong>
+            <%= @product.colour %>
+          </p>
+          <p>
+            <strong>Price:</strong>
+            <%= @product.price %>
+          </p>
+          <p>
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>&nbsp<strong>Reviews:</strong>
+            <%= @product.highest_rating_comment %>
+            <%= @product.lowest_rating_comment %>
+          </p>
+          <p>
+            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp<%= link_to 'Edit', edit_product_path(@product) %> |
+            <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>&nbsp<%= link_to 'Back', products_path %>
+          </p>
+      </div><!--end desc-detail-->
+    </div><!--end grid-desc-detail-->
+  </div><!--end row-->
+</div><!--end container product-->
