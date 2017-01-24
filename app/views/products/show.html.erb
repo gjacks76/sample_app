@@ -1,29 +1,41 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="col-xs-6 col-md-4">
+    <p>
+      <strong>Name:</strong>
+      <%= @product.name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @product.description %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+    <p>
+      <strong>Product Image:</strong>
+      <%= image_tag(@product.image_url, class: "img-responsive") %>
+    </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+    <p>
+      <strong>Color:</strong>
+      <%= @product.colour %>
+    </p>
 
-<p>
-  <strong>Color:</strong>
-  <%= @product.colour %>
-</p>
+    <p>
+      <strong>Price:</strong>
+      <%= @product.price %>
+    </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+    <p>
+      <strong>Reviews:</strong>
+      <%= @product.highest_rating_comment %>
+      <%= @product.lowest_rating_comment %>
+    </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+    <%= link_to 'Edit', edit_product_path(@product) %> |
+    <%= link_to 'Back', products_path %>
+  </div>
+</div>
